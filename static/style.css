@@ -1,0 +1,147 @@
+* { 
+  box-sizing: border-box;
+  font-family: Segoe UI, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #0b3d91, #061a3a);
+  color: #e8f1ff;
+  overflow: hidden;
+}
+
+/* ================= TOP BAR ================= */
+
+.top-bar {
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background: linear-gradient(135deg, #0c2e66, #081a33);
+  border-bottom: 2px solid rgba(0, 174, 255, 0.4);
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+  color: #8fd3ff;
+}
+
+.clock {
+  font-size: 14px;
+  background: rgba(0, 153, 255, 0.15);
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 174, 255, 0.4);
+}
+
+/* ================= DASHBOARD ================= */
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr;   /* DEFAULT FULL MAP */
+  height: calc(100vh - 64px);
+  transition: 0.3s ease;
+}
+
+/* ================= MAP ================= */
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+/* ================= SIDE PANEL ================= */
+
+.side-panel {
+  padding: 16px;
+  display: none;          /* DEFAULT HIDDEN */
+  flex-direction: column;
+  gap: 14px;
+  background: linear-gradient(180deg, rgba(10,30,60,0.95), rgba(5,15,30,0.98));
+  border-left: 2px solid rgba(0, 170, 255, 0.3);
+  overflow-y: auto;
+}
+
+.subtitle {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+/* ================= AWS BOX ================= */
+
+.aws-info-box {
+  background: rgba(5, 35, 70, 0.85);
+  border: 1px solid rgba(0, 170, 255, 0.45);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.aws-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  color: #7fd4ff;
+  margin-bottom: 6px;
+}
+
+.aws-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.aws-table td {
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(0, 150, 255, 0.18);
+  font-size: 13px;
+}
+
+.aws-table td:last-child {
+  text-align: right;
+  font-weight: 600;
+}
+
+.separator td {
+  border-bottom: 2px solid rgba(0, 170, 255, 0.35);
+}
+
+.aws-status {
+  margin-top: 8px;
+  font-weight: bold;
+  text-align: center;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+/* ================= BUTTONS ================= */
+
+.station-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.station-btn {
+  flex: 1;
+  background: linear-gradient(135deg, #1177cc, #00aaff);
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.station-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ================= CHART ================= */
+
+.chart-container {
+  flex: 1;
+  padding: 10px;
+  border-radius: 14px;
+  background: rgba(0, 30, 70, 0.45);
+  border: 1px solid rgba(0, 170, 255, 0.35);
+}

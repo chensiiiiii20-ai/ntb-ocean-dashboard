@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>BMKG NTB — AWS Maritime Live Dashboard</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<header class="top-bar">
+  <div class="logo">🌊 BMKG NTB — Maritime AWS Dashboard</div>
+  <div id="utcClock" class="clock">-- UTC</div>
+</header>
+
+<div class="dashboard" id="dashboard">
+
+  <!-- MAP -->
+  <div id="map"></div>
+
+  <!-- SIDE PANEL (HIDDEN DI AWAL) -->
+  <div class="side-panel" id="sidePanel">
+
+    <h2 id="stationTitle"></h2>
+    <p class="subtitle">AWS Maritim — Data Real-Time</p>
+
+    <!-- AWS INFO PANEL -->
+    <div class="aws-info-box" id="awsPanel">
+
+      <div class="aws-header">
+        <span>📍 AWS Maritim</span>
+        <span id="lastUpdate">-- UTC</span>
+      </div>
+
+      <table class="aws-table">
+        <tr><td>🌬️ Angin</td><td><span id="windValue">--</span> m/s</td></tr>
+        <tr><td>🌡️ Suhu Udara</td><td><span id="airTempValue">--</span> °C</td></tr>
+        <tr><td>💧 Kelembapan</td><td><span id="humidityValue">--</span> %</td></tr>
+        <tr><td>📏 Tekanan</td><td><span id="pressureValue">--</span> mb</td></tr>
+
+        <tr class="separator"><td colspan="2"></td></tr>
+
+        <tr><td>🌊 pH Laut</td><td><span id="phValue">--</span></td></tr>
+        <tr><td>🧂 Salinitas</td><td><span id="salinityValue">--</span> PSU</td></tr>
+        <tr><td>🌡️ Suhu Laut</td><td><span id="seaTempValue">--</span> °C</td></tr>
+        <tr><td>🌊 Gelombang</td><td><span id="waveValue">--</span> m</td></tr>
+      </table>
+
+      <div class="aws-status">
+        Status Laut:
+        <span id="seaStatus">NORMAL</span>
+      </div>
+
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="station-buttons">
+      <button class="station-btn" data-station="Kayangan">Kayangan</button>
+      <button class="station-btn" data-station="Lembar">Lembar</button>
+      <button class="station-btn" data-station="Pemenang">Pemenang</button>
+    </div>
+
+    <!-- CHART -->
+    <div class="chart-container">
+      <canvas id="timelineChart"></canvas>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
